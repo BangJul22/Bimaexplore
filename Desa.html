@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bima Explor</title>
+    <link href="style.css" rel="stylesheet">
+
+    <style>
+        /* Font & reset sederhana */
+        @font-face {
+            font-family: 'InterVar';
+            src: local('Inter'), local('Inter var'), local('System-ui');
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: InterVar, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: #f5f7fb;
+            color: #172022;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.35;
+            padding: 20px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+            border-radius: 14px;
+            padding: 18px;
+            box-shadow: 0 8px 30px rgba(18, 25, 38, 0.06);
+            border: 1px solid rgba(20, 30, 50, 0.04);
+        }
+
+        header h1 {
+            margin: 0 0 6px 0;
+            font-size: 20px;
+            letter-spacing: -0.2px;
+        }
+
+        header p {
+            margin: 0 0 14px 0;
+            color: #52606a;
+            font-size: 13px;
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+        }
+
+        .search {
+            flex: 1 1 260px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .search input {
+            width: 100%;
+            padding: 9px 12px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            background: #fff;
+            font-size: 14px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 12px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: #334155;
+            border: 1px solid #e6eef8;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #6D28D9, #4F46E5);
+            color: #fff;
+            box-shadow: 0 6px 18px rgba(79, 70, 229, 0.14);
+        }
+
+        /* Grid kecamatan */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .kecamatan {
+            background: linear-gradient(180deg, #ffffff, #fbfdff);
+            border-radius: 10px;
+            padding: 10px;
+            border: 1px solid rgba(20, 30, 50, 0.04);
+        }
+
+        .kec-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+
+        .kec-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #0f1724;
+            margin: 0;
+        }
+
+        .kec-toggle {
+            font-size: 13px;
+            color: #475569;
+            background: transparent;
+            border: 0;
+        }
+
+        .desa-list {
+            margin-top: 8px;
+            padding-left: 12px;
+            max-height: 520px;
+            overflow: auto;
+        }
+
+        .desa-list ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .desa-list li {
+            padding: 6px 0;
+            font-size: 13px;
+            color: #263238;
+            border-bottom: 1px dashed rgba(10, 20, 30, 0.04);
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        .desa-list li:last-child {
+            border-bottom: 0
+        }
+
+        .desa-name {
+            flex: 1
+        }
+
+        /* Empty / not found */
+        .no-match {
+            padding: 12px;
+            text-align: center;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        /* Mobile */
+        @media (max-width:800px) {
+            body {
+                padding: 12px
+            }
+
+            .container {
+                padding: 14px
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 10px
+            }
+
+            .desa-list li {
+                padding: 8px 0;
+                font-size: 14px
+            }
+
+            .kec-title {
+                font-size: 15px
+            }
+
+            .search input {
+                padding: 10px
+            }
+        }
+
+        /* Compact for mobile spacing even tighter where requested */
+        @media (max-width:420px) {
+            .container {
+                padding: 12px
+            }
+
+            header h1 {
+                font-size: 18px
+            }
+
+            header p {
+                font-size: 12px
+            }
+
+            .btn {
+                padding: 8px 10px;
+                font-size: 12px
+            }
+
+            .desa-list li {
+                padding: 6px 0
+            }
+        }
+
+        /* small helper */
+        .small-muted {
+            font-size: 12px;
+            color: #64748b
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <a href="#home" class="logo-container">
+            <div class="logo-text">Bima Explore</div>
+        </a>
+
+        <nav class="main-menu" id="mainMenu">
+            <a href="home.html" class="menu-item active">Home</a>
+        </nav>
+
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="about" class="section">
+        <div class="about-content">
+            <div class="about-header">
+                <h2>Daftar Desa per Kecamatan — Kabupaten Bima</h2>
+                <p>Gunakan pencarian untuk menemukan desa. Klik nama kecamatan untuk buka / tutup daftar.</p>
+                </p>
+            </div>
+
+            <div class="controls" aria-hidden="false">
+                <div class="search">
+                    <input id="searchBox" type="search" placeholder="Cari desa (mis. 'Belo', 'Rada', dsb.)" />
+                </div>
+
+                <button id="copyBtn" class="btn btn-ghost" title="Salin daftar yang terlihat">Copy Daftar</button>
+                <button id="downloadBtn" class="btn btn-primary" title="Download daftar sebagai CSV">Download
+                    CSV</button>
+            </div>
+
+            <div id="grid" class="grid" aria-live="polite">
+                <!-- Kecamatan & desa akan di-render di sini oleh JS -->
+            </div>
+
+            <div style="margin-top:14px; text-align:right;">
+                <span class="small-muted">Total kecamatan: <span id="countKec">0</span> • Total desa tampil: <span
+                        id="countDesa">0</span></span>
+            </div>
+
+            <script>
+                /*
+                  Data struktur: objek kecamatan => array desa
+                  (Data berasal dari input user)
+                */
+                const data = {
+                    "Ambalawi (Kecamatan)": ["Kole", "Mawu", "Nipa", "Rite", "Talapiti", "Tolowata"],
+                    "Belo (Kecamatan)": ["Diha", "Cenggu", "Lido", "Ncera", "Ngali", "Renda", "Roka", "Runggu", "soki"],
+                    "Bolo (Kecamatan)": ["Bontokape", "Darussalam", "Kananga", "Kara", "Leu", "Nggembe", "Rada", "Rasabau", "Rato", "Sanolo", "Sondosia", "Tambe", "Timu", "Tumpu"],
+                    "Donggo (Kecamatan)": ["Bumi Pajo", "Doridungga", "Kala", "Mbawa", "Mpili", "Ndano Na'e", "O'o", "Palama", "Rora"],
+                    "Lambitu (kecamatan)": ["Kaboro", "Kaowa", "Kuta", "Londu", "Sambori", "Teta"],
+                    "Lambu (Kecamatan)": ["Hidirasa", "Kaleo", "Lambu", "Lanta", "Lanta Barat", "Mangge", "Melayu", "Monta Baru", "Nggelu", "Rato", "Sangga", "Simpasai", "Soro Sumi"],
+                    "Langgudu (kecamatan)": ["Doro O'o", "Dumu", "Kalodu", "Kangga", "Karampi", "Karumbu", "Kawuwu", "Laju", "Pusu", "Rompo", "Rupe", "Sambane", "Sarae Ruma", "Wadu Ruka", "Waworada"],
+                    "Madapangga (Kecamatam)": ["Bolo", "Campa", "Dena", "Mandawau", "Monggo", "Mpuri", "Ncandi", "Ndano Rade", "Tonda Woro"],
+                    "Monta (kecamatam)": ["Baralau", "Monta", "Nontotera", "Pela", "Sekuru", "Sie", "Simpasai", "Sondo", "Tangga", "Tangga Baru", "Tolotangga", "Tolouwi", "Waro", "Willamaci"],
+                    "Palibelo (Kecamatan)": ["Belo", "Bre", "Dore", "Nata", "Ntonggu", "Panda", "Padolo", "Ragi", "Roi", "Teke", "Tolongondoa", "Tonggorisa"]
+                };
+
+                /* --- Render function --- */
+                const grid = document.getElementById('grid');
+                const searchBox = document.getElementById('searchBox');
+                const countKec = document.getElementById('countKec');
+                const countDesa = document.getElementById('countDesa');
+
+                function createKecamatanCard(name, desaArray) {
+                    const wrap = document.createElement('section');
+                    wrap.className = 'kecamatan';
+                    wrap.setAttribute('data-kec', name);
+
+                    // Header
+                    const head = document.createElement('div');
+                    head.className = 'kec-head';
+                    head.innerHTML = `
+    <h3 class="kec-title">${name}</h3>
+    <button class="kec-toggle" aria-expanded="true">Tutup</button>
+  `;
+                    wrap.appendChild(head);
+
+                    // Desa list
+                    const listWrap = document.createElement('div');
+                    listWrap.className = 'desa-list';
+                    const ul = document.createElement('ul');
+
+                    desaArray.forEach(d => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `<span class="desa-name">${d}</span><small class="small-muted"></small>`;
+                        ul.appendChild(li);
+                    });
+
+                    listWrap.appendChild(ul);
+                    wrap.appendChild(listWrap);
+
+                    // toggle behavior
+                    const btn = head.querySelector('.kec-toggle');
+                    btn.addEventListener('click', () => {
+                        const opened = btn.getAttribute('aria-expanded') === 'true';
+                        if (opened) {
+                            listWrap.style.display = 'none';
+                            btn.textContent = 'Buka';
+                            btn.setAttribute('aria-expanded', 'false');
+                        } else {
+                            listWrap.style.display = '';
+                            btn.textContent = 'Buka';
+                            btn.setAttribute('aria-expanded', 'true');
+                        }
+                    });
+
+                    return wrap;
+                }
+
+                /* initial render */
+                function renderAll(filterText = '') {
+                    grid.innerHTML = '';
+                    let totalDesa = 0;
+                    const query = filterText.trim().toLowerCase();
+
+                    Object.keys(data).forEach(kec => {
+                        const desaList = data[kec];
+                        // jika ada query, filter desa
+                        const filtered = desaList.filter(d => d.toLowerCase().includes(query));
+                        if (filtered.length > 0) {
+                            const card = createKecamatanCard(kec, filtered);
+                            grid.appendChild(card);
+                            totalDesa += filtered.length;
+                        }
+                    });
+
+                    // kalau tidak ada hasil
+                    if (grid.children.length === 0) {
+                        const empty = document.createElement('div');
+                        empty.className = 'kecamatan';
+                        empty.innerHTML = `<div class="no-match">Tidak ditemukan desa yang cocok untuk "<strong>${escapeHtml(query)}</strong>"</div>`;
+                        grid.appendChild(empty);
+                    }
+
+                    countKec.textContent = grid.querySelectorAll('.kecamatan').length;
+                    countDesa.textContent = totalDesa;
+                }
+
+                /* helper escapeHtml untuk tampilan query */
+                function escapeHtml(s) {
+                    return s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+                }
+
+                /* search realtime */
+                searchBox.addEventListener('input', (e) => {
+                    renderAll(e.target.value);
+                });
+
+                /* copy */
+                document.getElementById('copyBtn').addEventListener('click', () => {
+                    // kumpulkan semua desa yang ditampilkan
+                    const lines = [];
+                    const sections = grid.querySelectorAll('.kecamatan');
+                    sections.forEach(sec => {
+                        const titleEl = sec.querySelector('.kec-title');
+                        const ul = sec.querySelector('ul');
+                        if (titleEl && ul) {
+                            lines.push(titleEl.textContent);
+                            ul.querySelectorAll('li').forEach(li => {
+                                lines.push(' - ' + li.querySelector('.desa-name').textContent);
+                            });
+                            lines.push(''); // baris kosong antar kecamatan
+                        }
+                    });
+                    const text = lines.join('\n').trim();
+                    if (!text) {
+                        alert('Tidak ada data untuk disalin.');
+                        return;
+                    }
+                    navigator.clipboard.writeText(text).then(() => {
+                        alert('Daftar berhasil disalin ke clipboard.');
+                    }).catch(() => { alert('Gagal menyalin. Silakan salin secara manual.'); });
+                });
+
+                /* download CSV */
+                document.getElementById('downloadBtn').addEventListener('click', () => {
+                    const rows = [['Kecamatan', 'Desa']];
+                    const sections = grid.querySelectorAll('.kecamatan');
+                    sections.forEach(sec => {
+                        const titleEl = sec.querySelector('.kec-title');
+                        const ul = sec.querySelector('ul');
+                        if (titleEl && ul) {
+                            const kec = titleEl.textContent;
+                            ul.querySelectorAll('li').forEach(li => {
+                                const desa = li.querySelector('.desa-name').textContent;
+                                rows.push([kec, desa]);
+                            });
+                        }
+                    });
+
+                    if (rows.length <= 1) {
+                        alert('Tidak ada data untuk diunduh.');
+                        return;
+                    }
+
+                    const csv = rows.map(r => r.map(cell => `"${String(cell).replace(/"/g, '""')}"`).join(',')).join('\n');
+                    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'daftar-desa.csv';
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                    URL.revokeObjectURL(url);
+                });
+
+                /* initial load */
+                renderAll();
+
+                /* keyboard: tekan / fokus search */
+                window.addEventListener('keydown', (e) => {
+                    if (e.key === '/' && document.activeElement !== searchBox) {
+                        e.preventDefault();
+                        searchBox.focus();
+                    }
+                });
+            </script>
+
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="contact-content">
+            <div class="contact-header">
+                <h2>Get In Touch with Bima Explore</h2>
+                <p>Kami siap membantu merencanakan perjalanan impianmu di Bima.
+                    Dari pantai hingga pegunungan, biarkan kami bantu wujudkan pengalaman yang tak terlupakan.</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info-section">
+                    <h3>Let's Connect</h3>
+                    <p>Jelajahi Bima bersama kami!
+                        Hubungi kami untuk informasi wisata, kerja sama, atau promosi destinasi.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>bimaexplore@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Address</h4>
+                                <p>Bima Nusa Tenggara Barat</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Business Hours</h4>
+                                <p>Monday - Friday: 9:00 AM - 6:00 PM PST</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <h4>Follow Us</h4>
+                        <div class="social-buttons">
+                            <a href="#" class="social-btn" title="Facebook">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="social-btn" title="Twitter">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="social-btn" title="LinkedIn">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="social-btn" title="Instagram">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-section">
+                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="form-group">
+                                <label for="message">Tujuan</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#privacy" onclick="event.preventDefault(); alert('Privacy Policy page would go here');">Privacy
+                    Policy</a>
+                <a href="#terms" onclick="event.preventDefault(); alert('Terms of Service page would go here');">Terms
+                    of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <div class="scroll-to-top" id="scrollToTop">
+        <span>↑</span>
+    </div>
+
+    <script src="templatemo-3d-coverflow-scripts.js"></script>
+
+</body>
+
+</html>

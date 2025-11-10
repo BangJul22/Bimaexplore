@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bima Explor</title>
+    <link href="style.css" rel="stylesheet">
+
+    <style>
+        .about-container {
+            display: flex;
+            grid-template-columns: repeat(2, 1fr);
+            /* hanya 2 kolom sejajar */
+            justify-content: center;
+            /* sejajarkan di tengah secara horizontal */
+            align-items: center;
+            /* sejajarkan di tengah secara vertikal */
+            gap: 20px 30px;
+            /* jarak antar kolom */
+            flex-wrap: wrap;
+            /* biar tetap responsif di layar kecil */
+            margin-top: 40px;
+            padding: 0 10%;
+        }
+
+        .showcase-main {
+            text-align: center;
+            border: 2px solid #ccc;
+            border-radius: 15px;
+            padding: 25px 20px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .about-main {
+            flex: 1 1 45%;
+            max-width: 400px;
+            /* lebar tiap kolom */
+            margin: 0;
+            /* pastikan tidak ada jarak antar kolom */
+        }
+
+        .showcase-main {
+            text-align: center;
+            border: 2px solid #ccc;
+            border-radius: 15px;
+            padding: 25px 15px;
+            background-color: #302f2f;
+            background: linear-gradient(135deg, #667eea 0%, #1f102e 100%);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .showcase-title {
+            font-weight: bold;
+            color: #fffdfd;
+        }
+
+        .showcase-subtitle {
+            color: #fcfafa;
+            font-size: 0.95rem;
+        }
+
+        .card img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card {
+            width: 300px;
+            background: linear-gradient(180deg, #4f46e5, #9333ea);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            color: #fff;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .showcase-main:hover {
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 600px) {
+            .about-main {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            /* Supaya bisa 1 kolom di HP */
+        }
+
+        /* Kolom kiri: Card */
+        .about-card {
+            flex: 1 1 45%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-info {
+            flex: 1 1 45%;
+            color: #f1efef;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <a href="#home" class="logo-container">
+            <div class="logo-text">Bima Explore</div>
+        </a>
+
+        <nav class="main-menu" id="mainMenu">
+            <a href="home.html" class="menu-item active">Home</a>
+        </nav>
+
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="about-content">
+            <div class="about-header">
+                <h2>Uma Lengge Maria Wawo</h2>
+                <p>Selamat datang di Bima Explore, tempat terbaik untuk menemukan keindahan alam, budaya, dan sejarah
+                    Bima.</p>
+            </div>
+
+            <!-- Bagian dua kolom -->
+            <div class="about-container">
+                <!-- Kolom kiri: Card -->
+                <div class="about-card">
+                    <div class="showcase-main">
+                        <div class="corner-decoration top-left"></div>
+                        <div class="corner-decoration bottom-right"></div>
+
+                        <div class="card">
+                            <img src="images/ampe fare.jpg" alt="Logo" class="logo-img">
+                        </div>
+
+                        <h3 class="showcase-title">Ampe Fare</h3>
+                    </div>
+                </div>
+
+                <!-- Kolom kanan: Teks -->
+                <div class="about-info">
+                    <h3>Ampe Fare</h3>
+                    <p>Ampa fare: Tradisi menyimpan hasil panen padi ke lumbung padi tradisional. ini melambangkan
+                        sebagai rasa syukur dan mengajarkan hidup hemat sebagai cadangan pangan</p>
+
+                </div>
+            </div>
+            <div class="about-container">
+                <!-- Kolom kiri: Card -->
+                <div class="about-card">
+                    <div class="showcase-main">
+                        <div class="corner-decoration top-left"></div>
+                        <div class="corner-decoration bottom-right"></div>
+
+                        <div class="card">
+                            <img src="images/mbolo.jpg" alt="Logo" class="logo-img">
+                        </div>
+
+                        <h3 class="showcase-title">Mbolo Weki</h3>
+                    </div>
+                </div>
+
+                <!-- Kolom kanan: Teks -->
+                <div class="about-info">
+                    <h3>Mbolo Weki</h3>
+                    <p>Mbolo weki: Tradisi musyawarah atau berkumpul bersama dalam lingkungan keluarga atau masyarakat
+                        untuk mempererat hubungan dan mempersiapkan kegiatan penting(misalnya pernikahan atau syukuran)
+                    </p>
+
+                </div>
+            </div>
+            <div class="about-container">
+                <!-- Kolom kiri: Card -->
+                <div class="about-card">
+                    <div class="showcase-main">
+                        <div class="corner-decoration top-left"></div>
+                        <div class="corner-decoration bottom-right"></div>
+
+                        <div class="card">
+                            <img src="images/maja labo dahu.jpg" alt="Logo" class="logo-img">
+                        </div>
+
+                        <h3 class="showcase-title">Maja Labo Dahu</h3>
+                    </div>
+                </div>
+
+                <!-- Kolom kanan: Teks -->
+                <div class="about-info">
+                    <h3>Maja Labo Dahu</h3>
+                    <p>Maja labo dahu: Nilai budaya dan filosofi hidup masyarakat bima yang paling menonjol. Maja
+                        berarti "Malu" dan Dahu berarti "Takut" (takut melakukan pelanggaran hukum, agama, negara,
+                        dan etika sosial)</p>
+
+                </div>
+            </div>
+            <div class="about-container">
+                <!-- Kolom kiri: Card -->
+                <div class="about-card">
+                    <div class="showcase-main">
+                        <div class="corner-decoration top-left"></div>
+                        <div class="corner-decoration bottom-right"></div>
+
+                        <div class="card">
+                            <img src="images/ntubu tuta.jpg" alt="Logo" class="logo-img">
+                        </div>
+
+                        <h3 class="showcase-title">Ntumbu Tuta</h3>
+                    </div>
+                </div>
+
+                <!-- Kolom kanan: Teks -->
+                <div class="about-info">
+                    <h3>Ntumbu Tuta</h3>
+                    <p>Ntumbu tuta: Permainan tradisional adu kepala yang sudah menjadi warisan turun temurun</p>
+
+                </div>
+            </div>
+            <div class="about-container">
+                <!-- Kolom kiri: Card -->
+                <div class="about-card">
+                    <div class="showcase-main">
+                        <div class="corner-decoration top-left"></div>
+                        <div class="corner-decoration bottom-right"></div>
+
+                        <div class="card">
+                            <img src="images/atraksi.jpg" alt="Logo" class="logo-img">
+                        </div>
+
+                        <h3 class="showcase-title">Atraksi gantao</h3>
+                    </div>
+                </div>
+
+                <!-- Kolom kanan: Teks -->
+                <div class="about-info">
+                    <h3>Atraksi gantao</h3>
+                    <p>Atraksi gantao: Seni bela diri tradisional yang mirip dengan pencak silat, sering di tampilkan
+                        dalam acara acara sunatan atau perkawinan</p>
+
+                </div>
+            </div>
+            <div class="about-container">
+                <!-- Kolom kiri: Card -->
+                <div class="about-card">
+                    <div class="showcase-main">
+                        <div class="corner-decoration top-left"></div>
+                        <div class="corner-decoration bottom-right"></div>
+
+                        <div class="card">
+                            <img src="images/compo sampari.jpg" alt="Logo" class="logo-img">
+                        </div>
+
+                        <h3 class="showcase-title">Compo sampari</h3>
+                    </div>
+                </div>
+
+                <!-- Kolom kanan: Teks -->
+                <div class="about-info">
+                    <h3>Compo sampari</h3>
+                    <p>Compo sampari : Ritual ada yang di lakukan sehari sebelum anak laki-laki di ikhitan(sunar). dalam
+                        prosesinya anak laki-laki di pakaikan sampari/keris dan di irirngi dengan doa dan sholawat
+                        ebagao simbol ksatria dan kekuatan</p>
+
+                </div>
+            </div>
+            <div class="about-container">
+                <!-- Kolom kiri: Card -->
+                <div class="about-card">
+                    <div class="showcase-main">
+                        <div class="corner-decoration top-left"></div>
+                        <div class="corner-decoration bottom-right"></div>
+
+                        <div class="card">
+                            <img src="images/TARI bonggi.jpg" alt="Logo" class="logo-img">
+                        </div>
+
+                        <h3 class="showcase-title">Uma Lengge</h3>
+                    </div>
+                </div>
+
+                <!-- Kolom kanan: Teks -->
+                <div class="about-info">
+                    <h3>Uma Lengge</h3>
+                    <p>Uma Lengge : rumahadat tradisional bima, yang khas dengan bentuk adapnya yang tinggi dan
+                        mengerucut. Meskipun sering berfungsi sebagai lumbungg padi(ampa fare), bentuk arsitektur nya
+                        sendiri adalah bagian dari warian budaya</p>
+
+                </div>
+            </div>
+            <div class="about-container">
+                <!-- Kolom kiri: Card -->
+                <div class="about-card">
+                    <div class="showcase-main">
+                        <div class="corner-decoration top-left"></div>
+                        <div class="corner-decoration bottom-right"></div>
+
+                        <div class="card">
+                            <img src="images/gendang.jpg" alt="Logo" class="logo-img">
+                        </div>
+
+                        <h3 class="showcase-title">Gendang Bima</h3>
+                    </div>
+                </div>
+
+                <!-- Kolom kanan: Teks -->
+                <div class="about-info">
+                    <h3>Gendang Bima</h3>
+                    <p>Gendang Bima : Alat musik pukul yang paling dikenal di bima. digunakan dalam berbagai acara
+                        seperti hadrah, tarian tradisional dan upacara adat. terbuat dari kayu dan kulit hewan(biaanya
+                        kabing)</p>
+
+                </div>
+            </div>
+            <div class="about-container">
+                <!-- Kolom kiri: Card -->
+                <div class="about-card">
+                    <div class="showcase-main">
+                        <div class="corner-decoration top-left"></div>
+                        <div class="corner-decoration bottom-right"></div>
+
+                        <div class="card">
+                            <img src="images/rebana.jpg" alt="Logo" class="logo-img">
+                        </div>
+
+                        <h3 class="showcase-title">Rebana
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- Kolom kanan: Teks -->
+                <div class="about-info">
+                    <h3>Rebana
+                    </h3>
+                    <p>Rebana
+                        Mirip dengan gendang kecil, biasanya digunakan dalam kesenian islami seperti Zikir, Hadrah, dan
+                        Barzanji.Memiliki irama yang cepat dan dinamis.</p>
+
+                </div>
+            </div>
+            <div class="about-container">
+                <!-- Kolom kiri: Card -->
+                <div class="about-card">
+                    <div class="showcase-main">
+                        <div class="corner-decoration top-left"></div>
+                        <div class="corner-decoration bottom-right"></div>
+
+                        <div class="card">
+                            <img src="images/biola.jpg" alt="Logo" class="logo-img">
+                        </div>
+
+                        <h3 class="showcase-title">Biola Tradisional (Dala)
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- Kolom kanan: Teks -->
+                <div class="about-info">
+                    <h3>Biola Tradisional (Dala)
+                    </h3>
+                    <p>Biola Tradisional (Dala)
+                        Meski mirip biola modern, di Bima ada versi tradisionalnya yang digunakan untuk mengiringi
+                        nyanyian rakyat (nggahi).</p>
+
+                </div>
+            </div>
+            <div class="about-container">
+                <!-- Kolom kiri: Card -->
+                <div class="about-card">
+                    <div class="showcase-main">
+                        <div class="corner-decoration top-left"></div>
+                        <div class="corner-decoration bottom-right"></div>
+
+                        <div class="card">
+                            <img src="images/gong.jpg" alt="Logo" class="logo-img">
+                        </div>
+
+                        <h3 class="showcase-title">Gong
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- Kolom kanan: Teks -->
+                <div class="about-info">
+                    <h3>Gong
+                    </h3>
+                    <p>Gong
+                        Alat musik pukul dari logam, biasanya menjadi bagian dari ensambel musik tradisional.Digunakan
+                        untuk menandai pergantian bagian lagu atau tarian.</p>
+
+                </div>
+            </div>
+            <div class="about-container">
+                <!-- Kolom kiri: Card -->
+                <div class="about-card">
+                    <div class="showcase-main">
+                        <div class="corner-decoration top-left"></div>
+                        <div class="corner-decoration bottom-right"></div>
+
+                        <div class="card">
+                            <img src="images/suling.jpg" alt="Logo" class="logo-img">
+                        </div>
+
+                        <h3 class="showcase-title">Suling Bambu</h3>
+                    </div>
+                </div>
+
+                <!-- Kolom kanan: Teks -->
+                <div class="about-info">
+                    <h3>Suling Bambu</h3>
+                    <p>Suling Bambu
+                        Alat musik tiup sederhana dari bambu dengan nada lembut.Digunakan dalam lagu-lagu daerah atau
+                        pengiring syair tradisional.</p>
+
+                </div>
+            </div>
+            <div class="about-container">
+                <div class="about-card">
+                    <div class="showcase-main">
+                        <div class="corner-decoration top-left"></div>
+                        <div class="corner-decoration bottom-right"></div>
+
+                        <div class="card">
+                            <img src="images/serunai.jpg" alt="Logo" class="logo-img">
+                        </div>
+
+                        <h3 class="showcase-title">Serunai Bima (Seruni)</h3>
+                    </div>
+                </div>
+
+                <div class="about-info">
+                    <h3>Serunai Bima (Seruni)</h3>
+                    <p> Serunai Bima (Seruni)
+                        Alat musik tiup dari bambu atau kayu dengan lubang-lubang nada.Bunyi serunai khas digunakan
+                        untuk mengiringi tarian dan upacara adat
+                    </p>
+
+                    <a href="wisata.html" class="cta-button">
+                        Jelajah Sekarang
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="contact-content">
+            <div class="contact-header">
+                <h2>Get In Touch with Bima Explore</h2>
+                <p>Kami siap membantu merencanakan perjalanan impianmu di Bima.
+                    Dari pantai hingga pegunungan, biarkan kami bantu wujudkan pengalaman yang tak terlupakan.</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info-section">
+                    <h3>Let's Connect</h3>
+                    <p>Jelajahi Bima bersama kami!
+                        Hubungi kami untuk informasi wisata, kerja sama, atau promosi destinasi.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>bimaexplore@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Address</h4>
+                                <p>Bima Nusa Tenggara Barat</p>
+                                <a class="btn-map"
+                                    href="https://www.google.com/maps/place/Situs+Uma+Lengge+Wawo/@-8.5245477,118.8434862,17z/data=!3m1!4b1!4m6!3m5!1s0x2db58fefb9054097:0xbbb0ca2f77f1260c!8m2!3d-8.5245477!4d118.8460665!16s%2Fg%2F11b6v0z9br?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D"
+                                    target="_blank">
+                                    📍 Lihat Uma Lengge di Google Maps
+                                </a>
+
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Business Hours</h4>
+                                <p>Monday - Friday: 9:00 AM - 6:00 PM PST</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <h4>Follow Us</h4>
+                        <div class="social-buttons">
+                            <a href="#" class="social-btn" title="Facebook">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="social-btn" title="Twitter">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="social-btn" title="LinkedIn">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="social-btn" title="Instagram">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-section">
+                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="form-group">
+                                <label for="message">Tujuan</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#privacy" onclick="event.preventDefault(); alert('Privacy Policy page would go here');">Privacy
+                    Policy</a>
+                <a href="#terms" onclick="event.preventDefault(); alert('Terms of Service page would go here');">Terms
+                    of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <div class="scroll-to-top" id="scrollToTop">
+        <span>↑</span>
+    </div>
+
+    <script src="templatemo-3d-coverflow-scripts.js"></script>
+
+</body>
+
+</html>

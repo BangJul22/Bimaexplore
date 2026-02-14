@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bima Explor</title>
+    <link href="style.css" rel="stylesheet">
+
+    <style>
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 40px 20px;
+        }
+
+        .about-image {
+            flex: 1 1 350px;
+            text-align: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        .about-caption {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #f5efef;
+            font-style: italic;
+        }
+
+        .showcase-main {
+            text-align: center;
+            border: 2px solid #ccc;
+            border-radius: 15px;
+            padding: 25px 20px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .about-main {
+            flex: 1 1 45%;
+            max-width: 400px;
+            /* lebar tiap kolom */
+            margin: 0;
+            /* pastikan tidak ada jarak antar kolom */
+        }
+
+        .showcase-main {
+            width: 100%;
+            max-width: 500px;
+            /* tetap maksimal 500px */
+            border-radius: 20px;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #1f102e 100%);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        .showcase-title {
+            font-weight: bold;
+            color: #fffdfd;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .showcase-main:hover {
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 600px) {
+            .about-main {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            /* Supaya bisa 1 kolom di HP */
+        }
+
+        /* Kolom kiri: Card */
+        .about-card {
+            flex: 1 1 45%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-info {
+            flex: 1 1 45%;
+            color: #f1efef;
+        }
+
+        .showcase-title {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .maps-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .maps-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-info p {
+            text-align: justify;
+            line-height: 1.8;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <a href="#home" class="logo-container">
+            <div class="logo-text">Bima Explore</div>
+        </a>
+
+        <nav class="main-menu" id="mainMenu">
+            <a href="home.html" class="menu-item active">Home</a>
+        </nav>
+
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="about-content">
+            <div class="about-header">
+                <h2>Wisata Bima</h2>
+                <p>Selamat datang di Bima Explore, tempat terbaik untuk menemukan keindahan alam, budaya, dan sejarah
+                    Bima.</p>
+            </div>
+
+            <!-- Bagian dua kolom -->
+            <!-- Kolom kiri: Card -->
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="images/bajo.jpeg" alt="Sejarah Bima">
+                    <p class="about-caption">Pantai Bajo Pulo</p>
+                </div>
+
+                <!-- Kolom kanan: Teks -->
+                <div class="about-info">
+                    <h3>Pantai Bajo Pulo</h3>
+                    <p>Pantai Bajo Pulo merupakan salah satu destinasi wisata bahari yang berada di wilayah timur
+                        Kabupaten Bima, tepatnya di Kecamatan Sape. Pantai ini menawarkan panorama laut yang jernih
+                        dengan tebing batu yang unik serta suasana pantai yang masih alami. Untuk mencapai lokasi,
+                        pengunjung dapat menempuh perjalanan darat dari Kota Bima menuju Pelabuhan Sape sekitar satu
+                        jam, kemudian dilanjutkan dengan perjalanan menggunakan perahu selama kurang lebih 20 menit.
+                        Selain menikmati keindahan pantai, pengunjung juga dapat melihat kehidupan masyarakat Suku Bajo
+                        yang dikenal sebagai pelaut dan nelayan tradisional.</p>
+                    <a href="https://www.google.com/maps/place/Pantai+Bajo+Pulo+Sape+Bima" target="_blank"
+                        class="maps-btn">
+                        📍 Buka di Google Maps
+                    </a>
+                </div>
+
+                <div class="about-container">
+                <div class="about-image">
+                    <img src="images/wane.jpeg" alt="Sejarah Bima">
+                    <p class="about-caption">Pantai Wane</p>
+                </div>
+                    <!-- Kolom kanan: Teks -->
+                    <div class="about-info">
+                        <h3>Pantai Wane</h3>
+                        <p>Pantai Wane terletak di Desa Tolowata, Kecamatan Wera, Kabupaten Bima. Pantai ini terkenal
+                            dengan
+                            ombaknya yang cukup besar sehingga menjadi salah satu lokasi favorit bagi pecinta olahraga
+                            selancar. Hamparan pasir putih yang luas serta pemandangan laut yang masih alami menjadi
+                            daya
+                            tarik utama pantai ini. Pantai Wane juga sering dijadikan lokasi wisata bagi pengunjung yang
+                            ingin menikmati suasana pantai yang tenang dan jauh dari keramaian.
+                        </p>
+                        <a href="https://www.google.com/maps/place/Pantai+Wane/@-8.8090164,118.6473102,16.14z/data=!4m10!1m2!2m1!1swane!3m6!1s0x2dca8399ed2d5c13:0x4b339f6f090bd64a!8m2!3d-8.808802!4d118.656201!15sCgR3YW5lkgESdG91cmlzdF9hdHRyYWN0aW9u4AEA!16s%2Fg%2F11k4l7gzmm?entry=ttu&g_ep=EgoyMDI2MDIxMC4wIKXMDSoASAFQAw%3D%3D"
+                            target="_blank" class="maps-btn">
+                            📍 Buka di Google Maps
+                        </a>
+                    </div>
+                </div>
+                <div class="about-container">
+                <div class="about-image">
+                    <img src="images/lariti.jpeg" alt="Sejarah Bima">
+                    <p class="about-caption">Pantai Lariti</p>
+                </div>
+
+                    <!-- Kolom kanan: Teks -->
+                    <div class="about-info">
+                        <h3>Pantai Lariti</h3>
+                        <p>Pantai Lariti berada di Kecamatan Sape dan memiliki keunikan berupa hamparan pasir yang
+                            membelah
+                            laut menuju pulau kecil di tengahnya. Fenomena alam ini biasanya terlihat saat air laut
+                            surut,
+                            sehingga pengunjung dapat berjalan kaki menuju pulau kecil tersebut. Pantai ini memiliki air
+                            laut yang jernih dengan pemandangan yang eksotis, menjadikannya salah satu destinasi wisata
+                            favorit di Kabupaten Bima.</p>
+                        <a href="https://www.google.com/maps/place/Pantai+Lariti+Bima" target="_blank" class="maps-btn">
+                            📍 Buka di Google Maps
+                        </a>
+                    </div>
+                </div>
+                                <div class="about-container">
+                <div class="about-image">
+                    <img src="images/pantaipink.jpeg" alt="Sejarah Bima">
+                    <p class="about-caption">Pantai Pink</p>
+                </div>
+                    <!-- Kolom kanan: Teks -->
+                    <div class="about-info">
+                        <h3>Pantai Pink</h3>
+                        <p>Pantai Pink merupakan salah satu pantai unik yang memiliki pasir berwarna merah muda. Warna
+                            tersebut berasal dari serpihan karang merah yang bercampur dengan pasir putih alami. Pantai
+                            ini
+                            menawarkan panorama laut yang jernih dan pemandangan bawah laut yang indah, sehingga sangat
+                            cocok untuk aktivitas snorkeling dan wisata bahari. Keindahan Pantai Pink menjadikannya
+                            salah
+                            satu destinasi wisata yang banyak menarik wisatawan lokal maupun mancanegara.</p>
+                        <a href="https://maps.app.goo.gl/Ts41gdK6a5ytEZtt8" target="_blank" class="maps-btn">
+                            📍 Buka di Google Maps
+                        </a>
+                    </div>
+                </div>
+                                <div class="about-container">
+                <div class="about-image">
+                    <img src="images/kalaki.jpeg" alt="Sejarah Bima">
+                    <p class="about-caption">Taman Kalaki</p>
+                </div>
+                    <!-- Kolom kanan: Teks -->
+                    <div class="about-info">
+                        <h3>Taman Kalaki</h3>
+                        <p>Taman Kalaki merupakan kawasan ruang terbuka hijau yang menjadi salah satu tempat rekreasi
+                            keluarga di Kabupaten Bima. Taman ini menyediakan area bersantai, tempat bermain anak, serta
+                            pemandangan alam yang asri. Lokasinya yang strategis menjadikan taman ini sering dikunjungi
+                            masyarakat untuk berolahraga, berkumpul, maupun menikmati suasana santai di sore hari.</p>
+                        <a href="https://maps.app.goo.gl/U4QhgmTnCLwdCzJP7" target="_blank" class="maps-btn">
+                            📍 Buka di Google Maps
+                        </a>
+                    </div>
+                </div>
+                                <div class="about-container">
+                <div class="about-image">
+                    <img src="images/uma lengge.jpg" alt="Sejarah Bima">
+                    <p class="about-caption">Uma Lengge</p>
+                </div>
+
+                    <!-- Kolom kanan: Teks -->
+                    <div class="about-info">
+                        <h3>Uma Lengge</h3>
+                        <p>Uma Lengge adalah rumah adat tradisional masyarakat Bima yang memiliki bentuk arsitektur unik
+                            menyerupai kerucut. Bangunan ini biasanya digunakan sebagai tempat penyimpanan hasil panen
+                            masyarakat. Uma Lengge banyak ditemukan di Desa Maria, Kecamatan Wawo, dan menjadi salah
+                            satu
+                            warisan budaya yang masih dilestarikan hingga saat ini. Selain sebagai tempat penyimpanan,
+                            Uma
+                            Lengge juga menjadi daya tarik wisata budaya yang memperkenalkan kearifan lokal masyarakat
+                            Bima.
+                        </p>
+                        <a href="https://maps.app.goo.gl/tYwrajaDQi5fBhJm9" target="_blank" class="maps-btn">
+                            📍 Buka di Google Maps
+                        </a>
+                    </div>
+                </div>
+                                <div class="about-container">
+                <div class="about-image">
+                    <img src="images/asimbojo.jpeg" alt="Sejarah Bima">
+                    <p class="about-caption">Museum Asi Mbojo</p>
+                </div>
+                    <!-- Kolom kanan: Teks -->
+                    <div class="about-info">
+                        <h3>Museum Asi Mbojo</h3>
+                        <p>Museum Asi Mbojo merupakan museum sejarah dan budaya yang menyimpan berbagai peninggalan
+                            Kesultanan Bima. Museum ini dulunya merupakan istana kerajaan Bima yang kemudian
+                            dialihfungsikan
+                            menjadi tempat penyimpanan benda bersejarah. Di dalam museum terdapat koleksi seperti
+                            pakaian
+                            adat, senjata tradisional, naskah kuno, hingga perlengkapan kerajaan. Bangunan museum juga
+                            memiliki arsitektur khas perpaduan budaya lokal dan Eropa, sehingga menjadi daya tarik
+                            tersendiri. Tempat ini cocok dikunjungi untuk menambah pengetahuan tentang sejarah, budaya,
+                            dan
+                            perkembangan masyarakat Bima.</p>
+                        <a href="https://maps.app.goo.gl/FY3UT2Vmzie1HGTM8" target="_blank" class="maps-btn">
+                            📍 Buka di Google Maps
+                        </a>
+                    </div>
+                </div>
+                                <div class="about-container">
+                <div class="about-image">
+                    <img src="images/bomboncera.jpeg" alt="Sejarah Bima">
+                    <p class="about-caption">Bombo Ncera</p>
+                </div>
+
+                    <!-- Kolom kanan: Teks -->
+                    <div class="about-info">
+                        <h3>Bombo Ncera</h3>
+                        <p>Bombo Ncera merupakan salah satu destinasi wisata alam berupa perbukitan yang menawarkan
+                            pemandangan alam yang indah dari ketinggian. Dari lokasi ini, pengunjung dapat menikmati
+                            panorama laut dan pegunungan sekaligus. Tempat ini sering dijadikan lokasi berburu foto
+                            karena
+                            memiliki pemandangan yang eksotis, terutama saat matahari terbit maupun terbenam.</p>
+                        <a href="https://maps.app.goo.gl/cYZJq12YMotDmd9LA" target="_blank" class="maps-btn">
+                            📍 Buka di Google Maps
+                        </a>
+                    </div>
+                </div>
+                                <div class="about-container">
+                <div class="about-image">
+                    <img src="images/pulauulara.jpeg" alt="Sejarah Bima">
+                    <p class="about-caption">Pulau Ular</p>
+                </div>
+
+                    <!-- Kolom kanan: Teks -->
+                    <div class="about-info">
+                        <h3>Pulau Ular
+                        </h3>
+                        <p>Pulau Ular adalah pulau kecil yang dikenal sebagai habitat alami berbagai jenis ular laut.
+                            Pulau
+                            ini memiliki panorama laut yang indah dengan air yang jernih. Meskipun dikenal dengan
+                            keberadaan
+                            ular, pulau ini tetap menjadi destinasi wisata unik bagi pengunjung yang ingin melihat
+                            keanekaragaman hayati laut serta menikmati keindahan alam yang masih alami.</p>
+                        <a href="https://maps.app.goo.gl/k2nTrNZV4u1BEJEH6" target="_blank" class="maps-btn">
+                            📍 Buka di Google Maps
+                        </a>
+                    </div>
+                </div>
+                                <div class="about-container">
+                <div class="about-image">
+                    <img src="images/tambora" alt="Sejarah Bima">
+                    <p class="about-caption">Gunung Tambora</p>
+                </div>
+
+                    <!-- Kolom kanan: Teks -->
+                    <div class="about-info">
+                        <h3>Gunung Tambora
+                        </h3>
+                        <p>Gunung Tambora merupakan salah satu gunung berapi yang terkenal di dunia karena letusannya
+                            pada
+                            tahun 1815 yang tercatat sebagai salah satu letusan terbesar dalam sejarah. Gunung ini
+                            menawarkan panorama alam pegunungan yang indah serta jalur pendakian yang menantang bagi
+                            para
+                            pecinta alam. Kawasan Gunung Tambora juga memiliki keanekaragaman flora dan fauna serta
+                            menjadi
+                            salah satu destinasi wisata alam unggulan di Pulau Sumbawa.</p>
+                        <a href="https://maps.app.goo.gl/WnTtRkoNJh8aed1H7" target="_blank" class="maps-btn">
+                            📍 Buka di Google Maps
+                        </a>
+                    </div>
+                </div>
+                                <div class="about-container">
+                <div class="about-image">
+                    <img src="images/gunungsangiang.jpeg" alt="Sejarah Bima">
+                    <p class="about-caption">Gunung Api Sangiang</p>
+                </div>
+
+                    <!-- Kolom kanan: Teks -->
+                    <div class="about-info">
+                        <h3>Gunung Api Sangiang
+                        </h3>
+                        <p>Gunung Api Sangiang terletak di Pulau Sangiang dan merupakan gunung berapi aktif yang
+                            memiliki
+                            panorama alam yang eksotis. Pulau ini dikelilingi oleh perairan laut yang jernih serta
+                            terumbu
+                            karang yang indah. Selain menjadi destinasi wisata alam dan pendakian, kawasan ini juga
+                            cocok
+                            untuk aktivitas snorkeling dan wisata bahari. Keindahan alamnya menjadikan Gunung Api
+                            Sangiang
+                            sebagai salah satu destinasi wisata yang menarik untuk dikunjungi.</p>
+                        <a href="https://www.google.com/maps/place/Gunung+Api+Sangiang" target="_blank"
+                            class="maps-btn">
+                            📍 Buka di Google Maps
+                        </a>
+                    </div>
+                </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="contact-content">
+            <div class="contact-header">
+                <h2>Get In Touch with Bima Explore</h2>
+                <p>Kami siap membantu merencanakan perjalanan impianmu di Bima.
+                    Dari pantai hingga pegunungan, biarkan kami bantu wujudkan pengalaman yang tak terlupakan.</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info-section">
+                    <h3>Let's Connect</h3>
+                    <p>Jelajahi Bima bersama kami!
+                        Hubungi kami untuk informasi wisata, kerja sama, atau promosi destinasi.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>bimaexplore@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Address</h4>
+                                <p>Bima Nusa Tenggara Barat</p>
+                                <a class="btn-map"
+                                    href="https://www.google.com/maps/place/Situs+Uma+Lengge+Wawo/@-8.5245477,118.8434862,17z/data=!3m1!4b1!4m6!3m5!1s0x2db58fefb9054097:0xbbb0ca2f77f1260c!8m2!3d-8.5245477!4d118.8460665!16s%2Fg%2F11b6v0z9br?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D"
+                                    target="_blank">
+                                    📍 Lihat Uma Lengge di Google Maps
+                                </a>
+
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Business Hours</h4>
+                                <p>Monday - Friday: 9:00 AM - 6:00 PM PST</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <h4>Follow Us</h4>
+                        <div class="social-buttons">
+                            <a href="#" class="social-btn" title="Facebook">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="social-btn" title="Twitter">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="social-btn" title="LinkedIn">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="social-btn" title="Instagram">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-section">
+                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="form-group">
+                                <label for="message">Tujuan</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#privacy" onclick="event.preventDefault(); alert('Privacy Policy page would go here');">Privacy
+                    Policy</a>
+                <a href="#terms" onclick="event.preventDefault(); alert('Terms of Service page would go here');">Terms
+                    of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <div class="scroll-to-top" id="scrollToTop">
+        <span>↑</span>
+    </div>
+
+    <script src="templatemo-3d-coverflow-scripts.js"></script>
+
+</body>
+
+</html>

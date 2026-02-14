@@ -48,12 +48,10 @@
             color: #fffdfd;
         }
 
-        /* 📱 Tampilan HP */
         @media (max-width: 768px) {
             .about-container {
                 flex-direction: column;
                 gap: 4px;
-                /* jarak lebih rapat di HP */
                 padding: 8px 5px;
             }
 
@@ -64,7 +62,6 @@
             .about-text {
                 font-size: 15px;
                 line-height: 1.4;
-                /* teks lebih rapat di HP */
             }
 
             .about-text h2 {
@@ -78,11 +75,10 @@
             }
         }
     </style>
-
 </head>
 
 <body>
-    <!-- Header -->
+
     <header class="header" id="header">
         <a href="#home" class="logo-container">
             <div class="logo-text">Bima Explore</div>
@@ -99,7 +95,6 @@
         </div>
     </header>
 
-    <!-- Home Section -->
     <section id="about" class="section">
         <div class="about-content">
             <div class="about-header">
@@ -108,117 +103,81 @@
                     Bima.</p>
             </div>
 
-            <!-- Bagian dua kolom -->
+            <!-- SECTION 1 -->
             <div class="about-container">
                 <div class="about-image">
-                    <img src="images/sejarah.jpg" alt="Tradisi Rimpu">
-                    <p class="about-caption">🏰 Sejarah Kerajaan Bima (Dana Mbojo)
+                    <img src="images/sejarah.jpg" alt="Sejarah Bima">
+                    <p class="about-caption">🏰 Sejarah Kerajaan Bima (Dana Mbojo)</p>
                 </div>
 
                 <div class="about-text">
                     <h2>🏰 Sejarah Kerajaan Bima (Dana Mbojo)</h2>
                     <p>
                         Kerajaan Bima, yang dikenal juga dengan nama Dana Mbojo, merupakan salah satu kerajaan besar
-                        yang
-                        pernah berdiri di bagian timur Pulau Sumbawa, Nusa Tenggara Barat. Berdirinya kerajaan ini
+                        yang pernah berdiri di bagian timur Pulau Sumbawa, Nusa Tenggara Barat. Berdirinya kerajaan ini
                         diperkirakan sekitar abad ke-14, dengan sistem pemerintahan awal yang berbentuk kerajaan
                         tradisional yang dipimpin oleh para Ncuhi (kepala suku) di berbagai wilayah.
-
                     </p>
-                    <div class="about-text">
-                        <h2>Masa Penjajahan dan Perlawanan</h2>
-                        <p>
-                            Pada masa awal, masyarakat Bima menganut kepercayaan animisme dan Hindu, sebelum kemudian
-                            mendapat pengaruh agama Islam. Pemerintahan dijalankan secara adat oleh lima Ncuhi besar,
-                            yaitu:
-                            <li>Ncuhi Dara
-                            </li>
-                            <li>Ncuhi Parado</li>
-                            <li>Ncuhi Dore</li>
-                            <li>Ncuhi Padolo</li>
-                            <li>Ncuhi Belo</li>
-                            Kelima Ncuhi inilah yang menjadi dasar terbentuknya pemerintahan Kerajaan Bima.
-                        </p>
-                        <div class="about-container">
-                            <div class="about-image">
-                                <img src="images/masuknya islam.jpg" alt="Tradisi Rimpu">
-                                <p class="about-caption">🕌 Masuknya Islam ke Bima
-                                </p>
-                            </div>
+                </div>
+            </div>
 
-                            <div class="about-text">
-                                <h2>🕌 Masuknya Islam ke Bima</h2>
-                                <p>
-                                    Islam mulai masuk ke Bima pada awal abad ke-17, dibawa oleh para ulama dari
-                                    Kesultanan Gowa (Makassar) dan Kesultanan Ternate. Penyebaran Islam terjadi setelah
-                                    Raja Bima yang bernama La Kai menikah dengan putri Sultan Gowa. Setelah masuk Islam,
-                                    La Kai diangkat menjadi Sultan Bima I dan bergelar Sultan Abdul Kahir pada tahun
-                                    1620 M.
-                                    Sejak saat itu, Kerajaan Bima berubah menjadi Kesultanan Bima yang berlandaskan
-                                    ajaran Islam. Nilai-nilai Islam mulai diterapkan dalam sistem pemerintahan, hukum,
-                                    pendidikan, dan kehidupan sosial masyarakat.
+            <!-- SECTION 2 -->
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="images/masuknya islam.jpg" alt="Masuknya Islam">
+                    <p class="about-caption">🕌 Masuknya Islam ke Bima</p>
+                </div>
 
-                                </p>
-                                <div class="about-text">
-                                    <h2>⚖ Masa Kejayaan Kesultanan</h2>
-                                    <p>
-                                        Kesultanan Bima mencapai masa kejayaan pada abad ke-17 hingga ke-18. Pada masa
-                                        itu, wilayah kekuasaan Bima meliputi sebagian besar Pulau Sumbawa bagian timur
-                                        dan beberapa pulau kecil di sekitarnya.
-                                        Kesultanan Bima dikenal sebagai pusat perdagangan dan pelabuhan penting di
-                                        kawasan timur Indonesia, dengan aktivitas ekonomi yang berkembang pesat melalui
-                                        jalur laut.
+                <div class="about-text">
+                    <h2>Masa Awal Pemerintahan</h2>
+                    <p>Pemerintahan dijalankan oleh lima Ncuhi besar:</p>
+                    <ul>
+                        <li>Ncuhi Dara</li>
+                        <li>Ncuhi Parado</li>
+                        <li>Ncuhi Dore</li>
+                        <li>Ncuhi Padolo</li>
+                        <li>Ncuhi Belo</li>
+                    </ul>
 
-                                        Selain itu, Kesultanan Bima menjalin hubungan diplomatik dan perdagangan dengan
-                                        kerajaan-kerajaan lain seperti Gowa, Ternate, dan Bone. Bahasa, adat, dan tata
-                                        pemerintahan juga mengalami perkembangan pesat pada masa ini.
+                    <h2>🕌 Masuknya Islam ke Bima</h2>
+                    <p>
+                        Islam mulai masuk ke Bima pada awal abad ke-17 melalui Kesultanan Gowa dan Ternate.
+                        Raja La Kai kemudian memeluk Islam dan bergelar Sultan Abdul Kahir pada tahun 1620 M.
+                    </p>
 
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="about-container">
-                                <div class="about-image">
-                                    <img src="images/penjajahan.jpg" alt="Tradisi Rimpu">
-                                    <p class="about-caption">⚔ Masa Penjajahan dan Perlawanan
-                                    </p>
-                                </div>
+                    <h2>⚖ Masa Kejayaan Kesultanan</h2>
+                    <p>
+                        Kesultanan Bima berkembang menjadi pusat perdagangan penting di wilayah timur Indonesia.
+                    </p>
+                </div>
+            </div>
 
-                                <div class="about-text">
-                                    <h2>⚔ Masa Penjajahan dan Perlawanan</h2>
-                                    <p>
-                                        Pada abad ke-18, Kesultanan Bima mulai berhubungan dengan VOC (Belanda). Awalnya
-                                        hubungan ini bersifat kerja sama dagang, namun kemudian Belanda ikut campur
-                                        dalam urusan pemerintahan.
-                                        Hal ini menimbulkan perlawanan dari rakyat dan bangsawan Bima yang menolak
-                                        dominasi penjajahan. Meskipun sempat mengalami tekanan, semangat kemandirian dan
-                                        adat Bima tetap terjaga.
-                                    </p>
-                                    <div class="about-text">
-                                        <h2>🏛 Akhir Kesultanan dan Warisan Sejarah</h2>
-                                        <p>
-                                            Setelah Indonesia merdeka pada tahun 1945, sistem kesultanan dihapuskan dan
-                                            wilayah Bima resmi bergabung dengan Negara Kesatuan Republik Indonesia
-                                            (NKRI).
-                                            Meski begitu, warisan sejarah Kesultanan Bima masih bisa dilihat hingga
-                                            kini,
-                                            seperti:
-                                            <li>Istana Asi Mbojo yang kini dijadikan Museum Asi Mbojo, menyimpan
-                                                berbagai
-                                                peninggalan sejarah kerajaan.
-                                            </li>
-                                            <li>Naskah kuno, pakaian adat, serta simbol-simbol kerajaan yang
-                                                mencerminkan
-                                                kejayaan masa lalu.
-                                            </li>
-                                            <li>Tradisi adat seperti Mbolo Weki (musyawarah adat) dan nilai nggusu waru
-                                                (delapan sifat kepemimpinan ideal) masih dipegang oleh masyarakat Bima.
-                                            </li>
+            <!-- SECTION 3 -->
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="images/penjajahan.jpg" alt="Penjajahan">
+                    <p class="about-caption">⚔ Masa Penjajahan dan Perlawanan</p>
+                </div>
 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="about-text">
+                    <h2>⚔ Masa Penjajahan dan Perlawanan</h2>
+                    <p>
+                        Pada abad ke-18, VOC mulai ikut campur dalam pemerintahan Bima,
+                        menimbulkan perlawanan dari rakyat dan bangsawan.
+                    </p>
+
+                    <h2>🏛 Akhir Kesultanan dan Warisan Sejarah</h2>
+                    <ul>
+                        <li>Istana Asi Mbojo (Museum Asi Mbojo)</li>
+                        <li>Naskah kuno dan simbol kerajaan</li>
+                        <li>Tradisi adat seperti Mbolo Weki dan nilai Nggusu Waru</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
     </section>
+
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="contact-content">
@@ -270,6 +229,12 @@
                             <div class="contact-text">
                                 <h4>Address</h4>
                                 <p>Bima Nusa Tenggara Barat</p>
+                                <a class="btn-map"
+                                    href="https://www.google.com/maps/place/Situs+Uma+Lengge+Wawo/@-8.5245477,118.8434862,17z/data=!3m1!4b1!4m6!3m5!1s0x2db58fefb9054097:0xbbb0ca2f77f1260c!8m2!3d-8.5245477!4d118.8460665!16s%2Fg%2F11b6v0z9br?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D"
+                                    target="_blank">
+                                    📍 Lihat Uma Lengge di Google Maps
+                                </a>
+
                             </div>
                         </div>
 
